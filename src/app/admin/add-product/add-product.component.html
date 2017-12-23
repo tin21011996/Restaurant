@@ -1,0 +1,67 @@
+  <!-- Bootstrap -->
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+  <link href="assets/vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+  <link href="assets/styles.css" rel="stylesheet" media="screen">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<!-- block -->
+<div class="block">
+    <div class="navbar navbar-inner block-header">
+        <div class="muted pull-left">Add/Update Products</div>
+        <div class="pull-right"><span class="badge badge-info"></span>
+        </div>
+    </div>
+    <form>
+      <div class="block-content collapse in">
+          <div class="span3 pull-right">
+              <a href="#" class="thumbnail">
+                <img data-src="productModel.urlimage" style="width: 360px; height: 240px;" [src]="productModel.urlimage">
+              </a>
+          </div>
+          <div class="form-group">
+              Name:
+              <input class="form-control span4"
+              type ="text"
+              placeholder="Your name here."
+              name= "name"
+              [(ngModel)]="productModel.name">
+          </div>
+          <div class="form-group">
+            Price :
+            <input placeholder="Your price here." type ="text" class="form-control span4" name="price" [(ngModel)]="productModel.price"/>
+          </div>
+          <div class="form-group">
+            Description :
+            <br>
+            <textarea rows="5" class="form-control span4"
+              type ="text"
+              placeholder="Your description here."
+              name="description"
+              [(ngModel)]="productModel.description"></textarea>
+          </div>
+          <div class="form-group">
+              Sort Order :
+              <br>
+              <input class="form-control span4"
+                type ="text"
+                placeholder="Your sort order here."
+                name="sort_order"
+                [(ngModel)]="productModel.sort_order">
+            </div>
+          <div class="form-group">
+            Url Image :
+            <br>
+            <input placeholder="Your url image here." type ="text" class="form-control span4" name="urlimage" [(ngModel)]="productModel.urlimage"/>
+          </div>
+          <div class="form-group">
+            <button *ngIf="isInsert" class="btn btn-primary" (click)="addProduct()">Add Product</button>
+            <button  *ngIf="!isInsert" class="btn btn-primary" (click)="updateProduct()">Update</button>
+            <button  class="btn " (click)="resetAddProduct()">Reset</button>
+          </div>
+    </div>
+  </form>
+</div>

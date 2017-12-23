@@ -1,0 +1,42 @@
+  <!-- Bootstrap -->
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+  <link href="assets/vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+  <link href="assets/styles.css" rel="stylesheet" media="screen">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<!-- block -->
+<div class="block">
+    <div class="navbar navbar-inner block-header">
+        <div class="muted pull-left">Products</div>
+        <div class="pull-right"><span class="badge badge-info">1,234</span>
+        </div>
+    </div>
+    <div class="block-content collapse in">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price($)</th>
+                    <th>Sort Order</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let product of productsList; let i = index" [attr.data-index]="i"
+            (click)="productSelected(product)"
+            [class.active]="isSelected(product) && isReset">
+                <tr>
+                    <td>{{i}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.sort_order}}</td>
+                    <td><div class="deleteProducts" (click)="deleteProduct(product._id)">Delete</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+  <!-- Bootstrap -->
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+  <link href="assets/vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+  <link href="assets/styles.css" rel="stylesheet" media="screen">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<!-- block -->
+<div class="card" *ngIf="productModel.name.length >  0">
+    <div class="container-fliud">
+        <div class="col-1-1">
+            <div class="col-3-5">
+            <h4 class="product-title">{{productModel.name}}</h4>
+            <p class="product-description">{{productModel.description}}</p>
+            <p class="price"><span>current price: ${{productModel.price}}</span></p>
+            <div class="action">
+              <button class="add-to-cart btn btn-default" type="button" (click)="addItemInCart(productModel._id)" >add to cart</button>
+            </div>
+          </div>
+          <div class="preview">
+              <div class="pull-right">
+                <div class="tab-pane active" id="pic-1"><img data-src="productModel.urlimage" style="width: 240px; height: 240px;" [src]="productModel.urlimage"/></div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>

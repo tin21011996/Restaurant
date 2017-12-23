@@ -1,0 +1,66 @@
+  <!-- Bootstrap -->
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+  <link href="assets/vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+  <link href="assets/styles.css" rel="stylesheet" media="screen">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<!-- block -->
+<div class="row-fluid">
+    <div class="span10">
+      <div class="block">
+          <div class="navbar navbar-inner block-header">
+              <div class="muted pull-left">Add/Update Categories</div>
+              <div class="pull-right"><span class="badge badge-info"></span>
+              </div>
+          </div>
+          <form>
+            <div class="block-content collapse in">
+                <div class="form-group">
+                    Name:
+                    <br>
+                    <input class="form-control"
+                    type ="text"
+                    placeholder="Your name here."
+                    name= "name"
+                    [(ngModel)]="categoryModel.name">
+                </div>
+                <div class="form-group">
+                  Parent_Id :
+                  <br>
+                  <input placeholder="Your parent Id here."
+                  type ="text" class="form-control"
+                  name="parent_id"
+                  [(ngModel)]="categoryModel.parent_id"/>
+                </div>
+                <div class="form-group">
+                  Sort_Order :
+                  <br>
+                  <input class="form-control"
+                    type ="text"
+                    placeholder="Your sort order here."
+                    name="sort_order"
+                    [(ngModel)]="categoryModel.sort_order">
+                </div>
+                <div class="form-group">
+                    Link :
+                    <br>
+                    <input class="form-control"
+                      type ="text"
+                      placeholder="Your link here."
+                      name="href"
+                      [(ngModel)]="categoryModel.href">
+                </div>
+                <div class="form-group">
+                  <button *ngIf="isInsert" class="btn btn-primary" (click)="addCategory()">Add Category</button>
+                  <button  *ngIf="!isInsert" class="btn btn-primary" (click)="updateCategory()">Update</button>
+                  <button  class="btn " (click)="resetAddCategory()">Reset</button>
+                </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>

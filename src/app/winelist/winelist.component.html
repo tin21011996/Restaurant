@@ -1,0 +1,34 @@
+<app-header></app-header>
+ <!--==============================content================================-->
+ <section id="content">
+		<div class="zerogrid">
+        <div class="col-1-5">
+            <app-dash></app-dash>
+            <app-dashproduct></app-dashproduct>
+          </div>
+       <div class="block-2 pad-2">
+        <div class="col-3-5">
+			<div class="wrap-col">
+	        	<h3 class="h3-line">Wine Pairing</h3>
+	            <p class="top-2"><span class="clr-1 it-bold">Vivamus hendrerit mauris ut dui gravida ut viverra lectus incidunt. Cras mattis nec tristique.</span><br>
+	Fusce tincidunt, tellus eget tristique cursus, orci mi iaculis sem, sit amet dictum velit velit eu magna.
+	Nunc viverra nisi sed orci tincidunt at hendrerit.</p>
+	            <div class="img-border pad-3"><img src="./assets/images/page3-img1.jpg" alt=""></div>
+	            <p class="border-1">Fusce tincidunt, tellus eget tristique cursus, orci mi iaculis sem, sit amet dictum velit velit eu magna.
+	Nunc viverra nisi sed orci tincidunt at hendrerit orci </p>
+			</div>
+        </div>
+        <div class="col-2-5">
+			<div class="wrap-col">
+        	<h2 class="h2-line-3">Wine List</h2>
+            <div class="wrap">
+              <br>
+              <ul class="list" *ngFor="let wine of winesList">
+                <li><strong>{{wine.name}}</strong><span>${{wine.price}}</span><em>&nbsp;</em></li>
+              </ul>
+          	</div>
+		  </div>
+        </div>
+       </div>
+	  </div>
+    </section>

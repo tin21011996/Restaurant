@@ -1,0 +1,88 @@
+<app-header></app-header>
+<!--==============================content================================-->
+<section id="content">
+		<div class="zerogrid">
+        <div class="col-1-5">
+          <app-dash></app-dash>
+          <app-dashproduct></app-dashproduct>
+        </div>
+       <div class="block-2 pad-2">
+        <div class="col-3-4">
+			<div class="wrap-col">
+        	<h2 class="h2-line-3">Hot Foods:</h2>
+          <div class="box-5 top-4">
+            	<div class="col-1-4" *ngFor="let product of productsList; let i = index" [attr.data-index]="i"
+              (click)="productSelected(product)"
+              [class.active]="isSelected(product) && isReset">
+                <div class="wrap-col margin5" *ngIf="i<4">
+                        <div class="img-border"><a routerLink="/productdetail"><img data-src="productModel.urlimage" [src]="product.urlimage"  style="width: 120px; height: 80px;" alt=""></a></div>
+                        <p><span class="it-bold clr-1">{{product.name}}</span><br>ut dui gravida ut viverra lectus incidunt. Cras mattis tempor eros nec. </p>
+                </div>
+              </div>
+            </div>
+            <div class="box-5 top-4"
+            *ngFor="let product of productsList; let i = index" [attr.data-index]="i"
+            (click)="productSelected(product)"
+            [class.active]="isSelected(product) && isReset">
+                <div class="col-1-4" *ngIf="i<9 && i>4">
+                  <div class="wrap-col margin5">
+                          <div class="img-border"><img data-src="productModel.urlimage" [src]="product.urlimage"  style="width: 120px; height: 80px;" alt=""></div>
+                          <p><span class="it-bold clr-1">{{product.name}}</span><br>ut dui gravida ut viverra lectus incidunt. Cras mattis tempor eros nec. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="box-5 top-4"
+              *ngFor="let product of productsList; let i = index" [attr.data-index]="i"
+              (click)="productSelected(product)"
+              [class.active]="isSelected(product) && isReset">
+                  <div class="col-1-4" *ngIf="i<12 && i>8">
+                    <div class="wrap-col margin5">
+                            <div class="img-border"><img data-src="productModel.urlimage" [src]="product.urlimage"  style="width: 120px; height: 80px;" alt=""></div>
+                            <p><span class="it-bold clr-1">{{product.name}}</span><br>ut dui gravida ut viverra lectus incidunt. Cras mattis tempor eros nec. </p>
+                    </div>
+                  </div>
+                </div>
+            <div class="box-5 top-5 border-1">
+            	<div class="col-1-4">
+					<div class="wrap-col margin5">
+                	<div class="img-border"><img src="./assets/images/page4-img5.jpg" alt=""></div>
+                	<p><span class="it-bold clr-1">Cras mattis tempor nec </span><br>tristique. Fusce tincidunt, tellus eget tristique cursus, orci mi iaculis. </p>
+					</div>
+                </div>
+                <div class="col-1-4">
+					<div class="wrap-col margin5">
+                	<div class="img-border"><img src="./assets/images/page4-img6.jpg" alt=""></div>
+                	<p><span class="it-bold clr-2">Fusce tincidunt tellus </span><br>eget tristique cursus, orci mi iaculis sem, sit amet dictum velit velit. </p>
+					</div>
+                </div>
+                <div class="col-1-4">
+					<div class="wrap-col margin5">
+                	<div class="img-border"><img src="./assets/images/page4-img7.jpg" alt=""></div>
+                	<p><span class="it-bold clr-2">Dui gravida ut viverra</span><br>lectus incidunt. Cras mattis tempor eros nec tristique fusce.</p>
+					</div>
+                </div>
+                <div class="col-1-4">
+					<div class="wrap-col margin5">
+                	<div class="img-border"><img src="./assets/images/page4-img8.jpg" alt=""></div>
+                	<p><span class="it-bold clr-1">Vivamus hendrerit </span><br>ut dui gravida ut viverra lectus incidunt. Cras mattis tempor eros nec</p>
+					</div>
+                </div>
+            </div>
+            <a href="productdetail" class="link-1">read more</a>
+			</div>
+        </div>
+        <div class="col-1-4">
+			<div class="wrap-col">
+        	<h5 class="h5-line">Chef’s secrets:</h5>
+            <div class="comment-2">
+                <p><img src="./assets/images/comment-top-2.png" alt="" ><span class="clr-2 it-bold">Vivamus hendrerit mauris ut dui gravida ut viverra lectus incidunt. Cras mattis tempor eros nec tristique.</span><br>Sed sed felis arcu, vel vehicula. augue. Maecenas faucibus sagittis cursus. Fusce tincidunt, tellus eget tristique cursus.</p>
+                <div class="number"><strong>01.</strong><span class="clr-3 it-bold">Vivamus hendrerit mauris ut dui gravida ut viverra lectus incidunt. Cras mattis tempor eros nec tristique.</span></div>
+                <div class="number"><strong>02.</strong><span class="clr-3 it-bold">Cras mattis tempor eros nec tristique.Sed sed felis arcu, vel vehicula augue.</span></div>
+                <div class="number"><strong>03.</strong><span class="clr-3 it-bold">Sed sed felis arcu, vel vehicula augue. Maecenas faucibus sagittis cursus. <img src="./assets/images/comment-bottom-2.png" alt="" class="second" ></span></div>
+                <span class="clr-1"><strong>John Green</strong> <i>(chef)</i></span>
+            </div>
+			</div>
+        </div>
+       </div>
+	   </div>
+    </section>

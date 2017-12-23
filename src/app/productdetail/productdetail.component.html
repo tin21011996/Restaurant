@@ -1,0 +1,38 @@
+<!-- Bootstrap -->
+<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+<link href="assets/vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+<link href="assets/styles.css" rel="stylesheet" media="screen">
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+<body>
+    <!--==============================content================================-->
+    <section id="content" class="centercolumn">
+        <div class="container">
+            <app-header></app-header>
+          <div class="zerogrid">
+              <div class="col-1-5">
+                  <app-dash></app-dash>
+                  <app-dashproduct></app-dashproduct>
+                </div>
+                <div class="block-2 pad-1">
+                    <app-add-productdetail [productInfo]="productInfo" [reset]="reset" [productList]="productList"></app-add-productdetail>
+                   <div class="clear"></div>
+                   <div class="block-5">
+                     <div class="h3">
+                        <h3 class="h3-line-2">Most delicious:</h3>
+                       </div>
+                       <div class="box-2 align-items center">
+                            <app-productdetail-list [productInfo]="productInfo" [reset]="reset" [productList]="productList"></app-productdetail-list>
+                       </div>
+                   </div>
+                  </div>
+               </div>
+              </div>
+            </section>
+     <!--==============================footer=================================-->
+</body>

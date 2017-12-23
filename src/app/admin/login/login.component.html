@@ -1,0 +1,35 @@
+  <link rel="stylesheet" href="https://bootswatch.com/sandstone/bootstrap.min.css">
+  <!-- Bootstrap -->
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+  <link href="assets/vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+  <link href="assets/styles.css" rel="stylesheet" media="screen">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+   <script src="script.js"></script>
+  <body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="container" ng-controller="ExampleController">
+          <h2 class="page-header">Login</h2>
+          <form name="form" class="css-form" novalidate>
+            <div>{{message}}</div>
+            <div class="form-group">
+              Username :
+              <br>
+              <input type="text" name="username" ng-model="user.name" [(ngModel)]="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+              Password :
+              <br>
+              <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+            </div>
+            <button (click)="onLoginSubmit()" class="btn btn-primary" >Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
